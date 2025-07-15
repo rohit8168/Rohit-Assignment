@@ -14,7 +14,7 @@ app = Flask(__name__)
 CORS(app)
 
 def scrape_hacker_news_task():
-    page = 1  # You can modify this to cycle through pages if needed
+    page = 1  
     url = f'http://news.ycombinator.com/?p={page}'
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
@@ -76,12 +76,12 @@ def get_data():
     return jsonify(data)
 
 if __name__ == '__main__':
-    # Schedule the task to run every minute
+    
     schedule.every(1).minutes.do(scrape_hacker_news_task)
 
-    # Start the scheduler in a separate thread
+    
     scheduler_thread = threading.Thread(target=run_scheduler, daemon=True)
     scheduler_thread.start()
 
     # Start the Flask server
-    app.run(port=5000, debug=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get("PORT", 5000)))
