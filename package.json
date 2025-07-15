@@ -1,0 +1,16 @@
+   {
+     "name": "web-scraper-app",
+     "version": "1.0.0",
+     "description": "A ReactJS application for real-time web scraping with OAuth authentication",
+     "scripts": {
+       "start": "npx serve public"
+     },
+     "dependencies": {
+       "axios": "^1.6.8",
+       "react": "^18.2.0",
+       "react-dom": "^18.2.0"
+     },
+     "devDependencies": {
+       "serve": "^14.2.3"
+     }
+   }
