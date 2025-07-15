@@ -34,7 +34,7 @@
       const code = urlParams.get('code');
       const state = urlParams.get('state');
       if (code && state) {
-        axios.post('http://localhost:5000/api/auth', { code }) // Update to backend URL
+        axios.post('http://10.214.152.233:10000/api/auth', { code }) // Update to backend URL
           .then(response => {
             setUser(response.data.user);
             window.history.replaceState({}, document.title, '/');
@@ -47,7 +47,7 @@
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.get('http://localhost:5000/api/data'); // New endpoint
+      const response = await axios.get('http://10.214.152.233:10000/api/data'); // New endpoint
       setData(response.data);
     } catch (err) {
       setError('Failed to fetch data');
