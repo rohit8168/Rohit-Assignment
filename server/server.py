@@ -11,7 +11,7 @@ import threading
 
 load_dotenv()
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000,https://rohit-assignment-fvoo.vercel.app/,https://rohit-assignment-alpha.vercel.app/"}})
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 def scrape_hacker_news_task():
     page = 1  
