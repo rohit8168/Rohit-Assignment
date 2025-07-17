@@ -24,7 +24,7 @@
 
     const handleLogin = () => {
       const clientId = 'Ov23liGeLWCYLH8JyG1r';
-      const redirectUri = window.location.origin;
+      const redirectUri = "https://rohit-assignment-fvoo-owkggpcd9-rohits-projects-5431d21b.vercel.app/";
       const state = Math.random().toString(36).substring(2);
       window.location.href = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&state=${state}`;
     };
