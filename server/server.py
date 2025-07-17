@@ -40,7 +40,8 @@ def auth():
     payload = {
         'client_id': os.getenv('GITHUB_CLIENT_ID'),
         'client_secret': os.getenv('GITHUB_CLIENT_SECRET'),
-        'code': code
+        'code': code,
+        'redirect_uri': os.getenv('REDIRECT_URI', 'https://rohit-assignment-fvoo.vercel.app/')
     }
     headers = {'Accept': 'application/json'}
     response = requests.post('https://github.com/login/oauth/access_token', data=payload, headers=headers)
