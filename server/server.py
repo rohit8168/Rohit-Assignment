@@ -11,7 +11,7 @@ import threading
 
 load_dotenv()
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000,https://rohit-assignment-fvoo.vercel.app/"}})
+CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000,https://rohit-assignment-fvoo.vercel.app/,https://rohit-assignment-alpha.vercel.app/"}})
 
 def scrape_hacker_news_task():
     page = 1  
@@ -41,7 +41,7 @@ def auth():
         'client_id': os.getenv('GITHUB_CLIENT_ID'),
         'client_secret': os.getenv('GITHUB_CLIENT_SECRET'),
         'code': code,
-        'redirect_uri': os.getenv('REDIRECT_URI', 'https://rohit-assignment-fvoo.vercel.app/')
+        'redirect_uri': os.getenv('REDIRECT_URI', 'https://rohit-assignment-alpha.vercel.app/')
     }
     headers = {'Accept': 'application/json'}
     response = requests.post('https://github.com/login/oauth/access_token', data=payload, headers=headers)
